@@ -11,6 +11,8 @@ StandardError: Expected 5 to be String
 from /Users/lemur/dev/lazy_static/lib/lazy_static.rb:5:in `check'
 ```
 
+...and that's all it'll ever need to be.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -24,10 +26,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install lazy_static
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Contributing
 
