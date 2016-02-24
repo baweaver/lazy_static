@@ -4,14 +4,18 @@ describe LazyStatic do
   describe 'self#check' do
     context 'A Valid check' do
       it 'returns true' do
-        expect(LazyStatic.check 5, is_a: Integer).to eq(true)
+        expect(LazyStatic.check(5 => Integer)).to be_truthy
+      end
+
+      it 'takes multiple checks' do
+        expect(LazyStatic.check(5 => Integer, 's' => String)).to be_truthy
       end
     end
 
     context 'An Invalid check' do
       it 'returns true' do
-        expect { LazyStatic.check 5, is_a: String }.to raise_error(
-          TypeError, "Expected 5 to be String"
+        expect { LazyStatic.check(5 => String) }.to raise_error(
+          TypeError, "Expected 5 (Fixnum) to be of type String"
         )
       end
     end

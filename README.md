@@ -3,12 +3,11 @@
 It's a lazy static type checker, simple as this:
 
 ```
-[1] pry(main)> LazyStatic.check 5, is_a: Integer
-=> true
-
-[2] pry(main)> LazyStatic.check 5, is_a: String
-TypeError: Expected 5 to be String
-from /Users/lemur/dev/lazy_static/lib/lazy_static.rb:5:in `check'
+[1] pry(main)> LazyStatic.check(5 => Integer, 's' => String)
+=> {5=>Integer, "s"=>String}
+[2] pry(main)> LazyStatic.check(5 => Integer, 's' => Integer)
+TypeError: Expected s (String) to be of type Integer
+from /Users/lemur/dev/lazy_static/lib/lazy_static.rb:6:in `block in check'
 ```
 
 ...and that's all it'll ever need to be.
