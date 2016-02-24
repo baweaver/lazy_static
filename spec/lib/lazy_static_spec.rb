@@ -11,7 +11,7 @@ describe LazyStatic do
     context 'An Invalid check' do
       it 'returns true' do
         expect { LazyStatic.check 5, is_a: String }.to raise_error(
-          StandardError, "Expected 5 to be String"
+          TypeError, "Expected 5 to be String"
         )
       end
     end
