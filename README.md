@@ -7,7 +7,7 @@ It's a lazy static type checker, simple as this:
 => true
 
 [2] pry(main)> LazyStatic.check 5, is_a: String
-StandardError: Expected 5 to be String
+TypeError: Expected 5 to be String
 from /Users/lemur/dev/lazy_static/lib/lazy_static.rb:5:in `check'
 ```
 
